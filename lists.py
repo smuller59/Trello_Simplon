@@ -2,9 +2,7 @@ import boards
 import cards
 
 def main():
-    print("a")
-    print("b")
-
+    print ("c")
     pass
 
 if __name__ == "__main__":
