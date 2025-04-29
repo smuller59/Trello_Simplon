@@ -1,6 +1,6 @@
 import boards
 import cards
-import lists
+import deck
 
 def main():
     pass
