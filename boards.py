@@ -15,6 +15,10 @@ board_test = {
 
 board_list = [board_test]
 
+def create_board(name: str) -> dict:
+    return board_test
+
+
 def add_deck_to_board(deck: dict, board_name: str) -> bool:
     """Add the deck 'deck' to the board havin the name 'board_name'
     Return True if the deck is added, otherwise return False
