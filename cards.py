@@ -1,10 +1,10 @@
-import boards
-import deck as d
+import boards as b
+import decks as d
 
 card = {
         "name" : "mon_nom",
         "description" : "ma description",
-        "origin" : "mon_deck"
+        "origin_deck" : "mon_deck"
         }
 
 deck = {
@@ -19,10 +19,28 @@ deck = {
     
 
 def create_card(name:str, description: str, origin: str) -> dict:
+    """_summary_
+
+    Args:
+        name (str): _description_
+        description (str): _description_
+        origin (str): _description_
+
+    Returns:
+        dict: _description_
+    """
     card = {"name": name, "description": description, "origin": origin}
     d.add_card_to_deck(origin, card)    
 
 def get_deck(deck_name: str) -> dict:
+    """_summary_
+
+    Args:
+        deck_name (str): _description_
+
+    Returns:
+        dict: _description_
+    """
     return deck
 
 def main():

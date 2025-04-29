@@ -1,13 +1,21 @@
 import boards as b
 import cards as c
-import lists as l
+import decks as d
 
-board_list = get_list
 trello =  list()
 
 
 def delete_board(board_name: str, trello: list) -> bool:
-    for board in board_list:
+    """_summary_
+
+    Args:
+        board_name (str): _description_
+        trello (list): _description_
+
+    Returns:
+        bool: _description_
+    """
+    for board in trello:
         if board["name"] == board_name:
             del(board)
             return True
