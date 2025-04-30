@@ -11,18 +11,18 @@ def delete_board(board_name: str, trello: list) -> bool:
     Returns:
         bool: _description_
     """
-    for board in trello:
-        print(f"board : {board}")
-        if board["name"] == board_name:
-            print("je dois effacer")
-            del(board)
+    for i in range(len(trello)):
+        # print(f"board : {trello[i]}")
+        if trello[i]["name"] == board_name:
+            # print(f"je dois effacer {trello[i]}")
+            del(trello[i])
             return True
         else :
             return False
 
 
 def create_trello() -> list:
-    trello =  list()
+    trello = list()
     board_name_1 = "ma board numero 1"
     board_description_1 = "description de ma board numero 1"
     board_name_2 = "ma board numero 2"
