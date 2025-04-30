@@ -10,7 +10,7 @@ def add_card_to_deck(card:dict, deck_name:str):
             return True
         else:
             return False
-  
+
 def create_deck(name: dict, description:str, origin_board:str) -> dict:
     template_deck=dict()
     template_deck = {"name" : "Trelloplon",
@@ -27,19 +27,19 @@ def create_deck(name: dict, description:str, origin_board:str) -> dict:
     template_deck["description"]= description
     template_deck["origin_board"]= origin_board
     return template_deck
-pass
 
 def request_card(name:str):
     #demande une carte
-    demande_carte= get_create_card()
-    return (cards)
+    # demande_carte= get_create_card()
+    # return (cards)
+    pass
 
 def delete_deck():
     """Fonction qui supprime une liste"""
-pass
+    pass
 
 def get_deck():
-pass  
+    pass  
 
 def main():
     print ("c")
