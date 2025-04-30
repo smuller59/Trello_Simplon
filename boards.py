@@ -1,13 +1,5 @@
 import decks as d
-
-deck_test = {
-    "name": "deck test",
-    "card_list": list(),
-    "origin_board": "board test",
-    "description": "Example of a deck for test purpose."
-}
-
-board_list = []
+import app
 
 def create_board(board_name: str, board_description: str) -> dict:
     """Create a board
@@ -35,9 +27,6 @@ def create_board(board_name: str, board_description: str) -> dict:
     add_deck_to_board(deck2, board_name)
     add_deck_to_board(deck3, board_name)
 
-    # Temporary: Add board to board_list for test purpose
-    board_list.append(board)
-
     return board
 
 
@@ -54,7 +43,7 @@ def add_deck_to_board(deck: dict, board_name: str) -> bool:
     """
     
     # Add a deck to the input board
-    for board in board_list:
+    for board in app.trello:
         if (board["name"] == board_name):
             board["deck_list"].append(deck)
             return True
@@ -65,6 +54,8 @@ def add_deck_to_board(deck: dict, board_name: str) -> bool:
 def main():
     board_test = create_board("board test","Example of a board for test purpose.")
     print(board_test)
+
+    deck_test = d.create_deck("test deck", "Example of a deck for test purpose.","board test")
 
     print(add_deck_to_board(deck_test, "test board"))
     print(board_test)
