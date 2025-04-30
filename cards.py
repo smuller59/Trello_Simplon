@@ -29,8 +29,13 @@ def create_card(name:str, description: str, origin: str) -> dict:
     Returns:
         dict: _description_
     """
-    card = {"name": name, "description": description, "origin": origin}
-    d.add_card_to_deck(origin, card)    
+    card = {"name": name, 
+            "description": description, 
+            "origin": origin
+            }
+    # d.add_card_to_deck(origin, card)
+    return card
+    
 
 def get_deck(deck_name: str) -> dict:
     """_summary_
