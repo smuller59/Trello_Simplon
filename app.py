@@ -2,8 +2,6 @@ import boards as b
 import cards as c
 import decks as d
 
-trello =  list()
-
 
 def delete_board(board_name: str, trello: list) -> bool:
     """_summary_
@@ -22,9 +20,22 @@ def delete_board(board_name: str, trello: list) -> bool:
         else :
             return False
 
+def create_trello() -> list:
+    trello =  list()
+    board_name_1 = "ma board numero 1"
+    board_description_1 = "description de ma board numero 1"
+    board_name_2 = "ma board numero 2"
+    board_description_2 = "description de ma board numero 2"
+    board_name_3 = "ma bord numero 3"
+    board_description_3 = "description de ma board numero 3"
+    trello.append(b.add_board(board_name_1, board_description_1))
+    trello.append(b.add_board(board_name_2, board_description_2))
+    trello.append(b.add_board(board_name_3, board_description_3))
+    return trello
 
 def main():
-    pass
+    trello = create_trello()
+    print(trello)
 
 if __name__ == "__main__":
     main()
