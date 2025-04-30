@@ -16,7 +16,7 @@ def create_deck(name: dict, description:str, origin_board:str) -> dict:
     
     card1 = c.create_card("card1", "description de la carte 1", "Trelloplon")
     card2 = c.create_card("card2", "description de la carte 2", "Trelloplon")
-    card3 = c.create_card("card3", "description de la carte 2", "Trelloplon")
+    card3 = c.create_card("card3", "description de la carte 3", "Trelloplon")
     cards= [card1,card2,card3]
     template_deck["name"]= name
     template_deck["card_list"]= cards
@@ -31,18 +31,24 @@ def request_card(name:str):
     pass
 
 def delete_card(card_name:str, deck:dict):
-    for c.card in c.deck:
-        if c.card in c.deck:
-            del c.card   
-        else:
-            return False
+    for i in range(len(deck["card_list"])):
+        card = deck["card_list"][i]
+        print(card["name"])
+        if card["name"] == card_name:
+            del(deck["card_list"][i])
+            return True
+    else:
+        return False
+
 
 def get_deck():
     pass  
 
 def main():
-    print ("c")
-    pass
+    deck=create_deck('test',"description test","toto")
+
+    
+   
 
 if __name__ == "__main__":
     main()
