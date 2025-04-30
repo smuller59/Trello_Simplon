@@ -1,5 +1,3 @@
-import decks
-
 deck_test = {
     "name": "deck test",
     "card_list": list(),
@@ -7,16 +5,26 @@ deck_test = {
     "description": "Example of a deck for test purpose."
 }
 
-board_test = {
-    "name": "board test",
-    "deck_list": list(),
-    "description": "Example of a board for test purpose."
-}
+board_list = []
 
-board_list = [board_test]
+def create_board(board_name: str, board_description: str) -> dict:
+    """Create an empty board
 
-def create_board(name: str) -> dict:
-    return board_test
+    Args:
+        board_name (str): The name of the board to create
+        board_description (str): The description of the board to create
+
+    Returns:
+        dict: The board created
+    """
+
+    board = {
+        "name": board_name,
+        "deck_list": list(),
+        "description": board_description
+    }
+
+    return board
 
 
 def add_deck_to_board(deck: dict, board_name: str) -> bool:
@@ -41,6 +49,9 @@ def add_deck_to_board(deck: dict, board_name: str) -> bool:
 
 
 def main():
+    board_test = create_board("board test","Example of a board for test purpose.")
+    print(board_test)
+
     print(add_deck_to_board(deck_test, "test board"))
     print(board_test)
 
