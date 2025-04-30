@@ -12,7 +12,7 @@ def add_card_to_deck(card:dict, deck_name:str):
             return False
   
 def create_deck(name: dict, description:str, origin_board:str) -> dict:
-    template_deck=dict
+    template_deck=dict()
     template_deck = {"name" : "Trelloplon",
                  "card_list":[],
                 "description":"bouchon_deck",
