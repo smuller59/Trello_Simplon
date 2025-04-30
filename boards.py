@@ -29,6 +29,25 @@ def create_board(board_name: str, board_description: str) -> dict:
 
     return board
 
+def delete_deck(board: dict, deck_name: str) -> bool:
+    """Deleta a deck in a board
+
+    Args:
+        board (dict): The board containing the list of decks
+        deck_name (str): The name of the deck to delete
+
+    Returns:
+        bool: True if a deck was removed during the operation, False otherwise.
+    """
+    
+    for idx in range(len(board["deck_list"])):
+        deck = board["deck_list"][idx]
+        if deck["name"] == deck_name:
+            del board["deck_list"][idx]
+            return True
+    else:
+        return False
+
 
 def add_deck_to_board(deck: dict, board: dict):
     """Add the deck 'deck' to the board havin the name 'board_name'
@@ -41,17 +60,36 @@ def add_deck_to_board(deck: dict, board: dict):
     board["deck_list"].append(deck)
 
 
+def display_board(board:dict) -> None :
+    """Display the content of the board
+
+    Args:
+        board (dict): The board
+    """
+    print(board["name"])
+    print(board["description"])
+    for deck in board["deck_list"]:
+        print(deck)
+
+
 def main():
     board_test = create_board("board test","Example of a board for test purpose.")
-    print(board_test)
+    display_board(board_test)
 
-    deck_test = d.create_deck("test deck", "Example of a deck for test purpose.","board test")
+    deckA = d.create_deck("deck A", "Example A.","board test")
+    deckB = d.create_deck("deck B", "Example B.","board test")
+    deckC = d.create_deck("deck C", "Example C.","board test")
 
-    print(add_deck_to_board(deck_test, "test board"))
-    print(board_test)
+    add_deck_to_board(deckA, board_test)
+    display_board(board_test)
+    add_deck_to_board(deckB, board_test)
+    display_board(board_test)
+    add_deck_to_board(deckC, board_test)
+    display_board(board_test)
 
-    print(add_deck_to_board(deck_test, "board test"))
-    print(board_test)
+    print(delete_deck(board_test, "deck A"))
+    display_board(board_test)
+
 
 if __name__ == "__main__":
     main()
