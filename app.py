@@ -28,9 +28,9 @@ def create_trello() -> list:
     board_description_2 = "description de ma board numero 2"
     board_name_3 = "ma bord numero 3"
     board_description_3 = "description de ma board numero 3"
-    trello.append(b.add_board(board_name_1, board_description_1))
-    trello.append(b.add_board(board_name_2, board_description_2))
-    trello.append(b.add_board(board_name_3, board_description_3))
+    trello.append(b.create_board(board_name_1, board_description_1))
+    trello.append(b.create_board(board_name_2, board_description_2))
+    trello.append(b.create_board(board_name_3, board_description_3))
     return trello
 
 def main():
