@@ -25,7 +25,7 @@ def main():
     display_trello(trello)
     
     # print(trello)
-    trello_js = json.dumps(trello)
+    # trello_js = json.dumps(trello)
     # print(trello_js)
 
 
