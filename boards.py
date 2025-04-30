@@ -23,32 +23,22 @@ def create_board(board_name: str, board_description: str) -> dict:
     deck1 = d.create_deck("Deck 1", "Test ask creation of deck 1", board_name)
     deck2 = d.create_deck("Deck 2", "Test ask creation of deck 2", board_name)
     deck3 = d.create_deck("Deck 3", "Test ask creation of deck 3", board_name)
-    add_deck_to_board(deck1, board_name)
-    add_deck_to_board(deck2, board_name)
-    add_deck_to_board(deck3, board_name)
+    add_deck_to_board(deck1, board)
+    add_deck_to_board(deck2, board)
+    add_deck_to_board(deck3, board)
 
     return board
 
 
-def add_deck_to_board(deck: dict, board_name: str) -> bool:
+def add_deck_to_board(deck: dict, board: dict):
     """Add the deck 'deck' to the board havin the name 'board_name'
     Return True if the deck is added, otherwise return False
 
     Args:
         deck (dict): The deck to be added
-        board_name (str): The name of the board that will host the deck
-
-    Returns:
-        bool: Is the deck added somewhere during the operation ?
+        board (dict): The board that will host the deck
     """
-    
-    # Add a deck to the input board
-    for board in app.trello:
-        if (board["name"] == board_name):
-            board["deck_list"].append(deck)
-            return True
-    else:
-        return False
+    board["deck_list"].append(deck)
 
 
 def main():
