@@ -1,12 +1,5 @@
 import decks as d
 
-deck_test = {
-    "name": "deck test",
-    "card_list": list(),
-    "origin_board": "board test",
-    "description": "Example of a deck for test purpose."
-}
-
 board_list = []
 
 def create_board(board_name: str, board_description: str) -> dict:
@@ -65,6 +58,8 @@ def add_deck_to_board(deck: dict, board_name: str) -> bool:
 def main():
     board_test = create_board("board test","Example of a board for test purpose.")
     print(board_test)
+
+    deck_test = d.create_deck("test deck", "Example of a deck for test purpose.","board test")
 
     print(add_deck_to_board(deck_test, "test board"))
     print(board_test)
