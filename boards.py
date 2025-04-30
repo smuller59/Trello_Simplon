@@ -28,9 +28,9 @@ def create_board(board_name: str, board_description: str) -> dict:
     }
 
     # Request creation of a set of decks
-    deck1 = d.create_deck("Deck 1", board_name, "Test ask creation of deck 1")
-    deck2 = d.create_deck("Deck 2", board_name, "Test ask creation of deck 2")
-    deck3 = d.create_deck("Deck 3", board_name, "Test ask creation of deck 3")
+    deck1 = d.create_deck("Deck 1", "Test ask creation of deck 1", board_name)
+    deck2 = d.create_deck("Deck 2", "Test ask creation of deck 2", board_name)
+    deck3 = d.create_deck("Deck 3", "Test ask creation of deck 3", board_name)
     add_deck_to_board(deck1, board_name)
     add_deck_to_board(deck2, board_name)
     add_deck_to_board(deck3, board_name)
