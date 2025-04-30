@@ -1,6 +1,7 @@
 import boards as b
 import cards as c
 import decks as d
+import json
 
 
 def delete_board(board_name: str, trello: list) -> bool:
@@ -36,6 +37,8 @@ def create_trello() -> list:
 def main():
     trello = create_trello()
     print(trello)
+    trello_js = json.dumps(trello)
+    print(trello_js)
 
 if __name__ == "__main__":
     main()
