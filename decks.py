@@ -13,11 +13,7 @@ def add_card_to_deck(card:dict, deck_name:str):
 
 def create_deck(name: dict, description:str, origin_board:str) -> dict:
     template_deck=dict()
-    template_deck = {"name" : "Trelloplon",
-                 "card_list":[],
-                "description":"bouchon_deck",
-                "origin_board" : "Origin_toto"
-                }
+    
     card1 = c.create_card("card1", "description de la carte 1", "Trelloplon")
     card2 = c.create_card("card2", "description de la carte 2", "Trelloplon")
     card3 = c.create_card("card3", "description de la carte 2", "Trelloplon")
@@ -34,9 +30,12 @@ def request_card(name:str):
     # return (cards)
     pass
 
-def delete_deck():
-    """Fonction qui supprime une liste"""
-    pass
+def delete_card(card_name:str, deck:dict):
+    for c.card in c.deck:
+        if c.card in c.deck:
+            del c.card   
+        else:
+            return False
 
 def get_deck():
     pass  
