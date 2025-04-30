@@ -1,3 +1,5 @@
+import decks as d
+
 deck_test = {
     "name": "deck test",
     "card_list": list(),
@@ -8,7 +10,7 @@ deck_test = {
 board_list = []
 
 def create_board(board_name: str, board_description: str) -> dict:
-    """Create an empty board
+    """Create a board
 
     Args:
         board_name (str): The name of the board to create
@@ -18,11 +20,23 @@ def create_board(board_name: str, board_description: str) -> dict:
         dict: The board created
     """
 
+    # Temporary: create an empty board
     board = {
         "name": board_name,
         "deck_list": list(),
         "description": board_description
     }
+
+    # Request creation of a set of decks
+    deck1 = d.create_deck("Deck 1", board_name, "Test ask creation of deck 1")
+    deck2 = d.create_deck("Deck 2", board_name, "Test ask creation of deck 2")
+    deck3 = d.create_deck("Deck 3", board_name, "Test ask creation of deck 3")
+    add_deck_to_board(deck1, board_name)
+    add_deck_to_board(deck2, board_name)
+    add_deck_to_board(deck3, board_name)
+
+    # Temporary: Add board to board_list for test purpose
+    board_list.append(board)
 
     return board
 
