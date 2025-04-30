@@ -1,4 +1,4 @@
-import lists
+import decks
 
 deck_test = {
     "name": "deck test",
